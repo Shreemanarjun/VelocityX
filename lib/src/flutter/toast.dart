@@ -15,6 +15,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:velocity_x/src/extensions/context_ext.dart';
 
 /// Toast position
 enum VxToastPosition {
@@ -188,7 +189,7 @@ class _VxToastViewState extends State<_VxToastView>
       opacity: _controller!,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 40),
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.sizeOf(context).width,
         alignment: Alignment.center,
         child: _buildToastWidget(),
       ),
@@ -218,8 +219,7 @@ class _VxToastViewState extends State<_VxToastView>
               widget.msg!,
               style: TextStyle(
                 fontSize: widget.textSize,
-                color: widget.textColor ??
-                    Theme.of(context).textTheme.bodyLarge!.color,
+                color: widget.textColor ?? context.textTheme.bodyLarge!.color,
               ),
             ),
           ),
@@ -228,8 +228,7 @@ class _VxToastViewState extends State<_VxToastView>
     } else if (widget.type == VxToastType.loading) {
       return Center(
         child: Card(
-          color:
-              widget.bgColor ?? Theme.of(context).textTheme.titleLarge!.color,
+          color: widget.bgColor ?? context.textTheme.titleLarge!.color,
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: widget.pdHorizontal!,
@@ -250,8 +249,8 @@ class _VxToastViewState extends State<_VxToastView>
                   widget.msg!,
                   style: TextStyle(
                     fontSize: widget.textSize,
-                    color: widget.textColor ??
-                        Theme.of(context).textTheme.bodyLarge!.color,
+                    color:
+                        widget.textColor ?? context.textTheme.bodyLarge!.color,
                   ),
                 )
               ],
@@ -267,11 +266,11 @@ class _VxToastViewState extends State<_VxToastView>
   dynamic buildToastPosition(context) {
     dynamic backResult;
     if (widget.toastPosition == VxToastPosition.top) {
-      backResult = MediaQuery.of(context).size.height * 1 / 6;
+      backResult = MediaQuery.sizeOf(context).height * 1 / 6;
     } else if (widget.toastPosition == VxToastPosition.center) {
-      backResult = MediaQuery.of(context).size.height * 1 / 2;
+      backResult = MediaQuery.sizeOf(context).height * 1 / 2;
     } else {
-      backResult = MediaQuery.of(context).size.height * 0.9;
+      backResult = MediaQuery.sizeOf(context).height * 0.9;
     }
     return backResult;
   }

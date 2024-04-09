@@ -42,6 +42,21 @@ extension VxContextExtensions on BuildContext {
   /// Check if the window size is of Mobile Type as per Material Design Guidlines.
   bool get isMobile => mdWindowSize == VxWindowSize.xsmall;
 
+  /// Check if the window size is xsmall.
+  bool get isXSmallSize => screenWidth < 600;
+
+  /// Check if the window size is small.
+  bool get isSmallSize => screenWidth >= 600 && screenWidth < 1024;
+
+  /// Check if the window size is medium.
+  bool get isMediumSize => screenWidth >= 1024 && screenWidth < 1440;
+
+  /// Check if the window size is large.
+  bool get isLargeSize => screenWidth >= 1440 && screenWidth < 1920;
+
+  /// Check if the window size is xlarge.
+  bool get isXLargeSize => screenWidth >= 1920;
+
   /// Returns if it's a handset as per Material Design Guidlines.
   bool get isMobileTypeHandset => mdDeviceType == MobileDeviceType.handset;
 
@@ -52,19 +67,22 @@ extension VxContextExtensions on BuildContext {
   MediaQueryData get mq => MediaQuery.of(this);
 
   /// Get MediaQuery Screen Size
-  Size get screenSize => mq.size;
+  Size get screenSize => MediaQuery.sizeOf(this);
 
   /// Get MediaQuery Screen Density
-  double get screenDensity => mq.devicePixelRatio;
+  double get screenDensity => MediaQuery.devicePixelRatioOf(this);
+
+  /// Get MediaQuery devicePixelRatio
+  double get devicePixelRatio => mq.devicePixelRatio;
 
   /// Get MediaQuery Screen Padding
-  EdgeInsets get screenPadding => mq.padding;
+  EdgeInsets get screenPadding => MediaQuery.paddingOf(this);
 
   /// Get MediaQuery Screen Width
-  double get screenWidth => mq.size.width;
+  double get screenWidth => screenSize.width;
 
   /// Get MediaQuery Screen Height
-  double get screenHeight => mq.size.height;
+  double get screenHeight => screenSize.height;
 
   /// Get MediaQuery Screen Width in percentage
   double get percentWidth => screenWidth / 100;
@@ -73,10 +91,10 @@ extension VxContextExtensions on BuildContext {
   double get percentHeight => screenHeight / 100;
 
   /// Get MediaQuery safearea padding horizontally
-  double get _safeAreaHorizontal => mq.padding.left + mq.padding.right;
+  double get _safeAreaHorizontal => screenPadding.left + screenPadding.right;
 
   /// Get MediaQuery safearea padding vertically
-  double get _safeAreaVertical => mq.padding.top + mq.padding.bottom;
+  double get _safeAreaVertical => screenPadding.top + screenPadding.bottom;
 
   /// Get MediaQuery Screen Width in percentage including safe area calculation.
   double get safePercentWidth => (screenWidth - _safeAreaHorizontal) / 100;
@@ -123,7 +141,7 @@ extension VxContextExtensions on BuildContext {
   FlutterView? get maybeView => View.maybeOf(this);
 
   ///Returns Orientation using [MediaQuery]
-  Orientation get orientation => mq.orientation;
+  Orientation get orientation => MediaQuery.orientationOf(this);
 
   /// Returns if Orientation is landscape
   bool get isLandscape => orientation == Orientation.landscape;
@@ -231,22 +249,6 @@ extension VxContextExtensions on BuildContext {
   /// It is used for routing in flutter
   ///
   NavigatorState? get vxnavigator => Navigator.of(this);
-
-  ///
-  /// Pushes the built widget to the screen using the material fade in animation
-  ///
-  /// Will return a value when the built widget calls [pop]
-  ///
-  Future<T?> push<T>(WidgetBuilder builder) async {
-    return await vxnavigator!.push<T>(MaterialPageRoute(builder: builder));
-  }
-
-  ///
-  /// Removes the top most Widget in the navigator's stack
-  ///
-  /// Will return the [result] to the caller of [push]
-  ///
-  void pop<T>([T? result]) => vxnavigator!.pop<T>(result);
 
   ///
   /// Pushes the built widget to the screen using the material fade in animation
