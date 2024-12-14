@@ -1,4 +1,9 @@
-## [4.1.3] - Nov 23, 2023
+## [4.3.0] -
+
+- Breaking changes for intl and Flutter 3.27 migration fixes
+
+
+## [4.1.3] -
 
 - Flutter 3.27 migration fixes
 
