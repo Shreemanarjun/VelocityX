@@ -137,7 +137,7 @@ class _DemoListState extends State<DemoList> {
                       margin: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 10),
                       borderRadius: BorderRadius.circular(10),
-                      shadowColor: Colors.black.withOpacity(0.3),
+                      shadowColor: Colors.black.withValues(alpha: 0.3),
                       onTap: () {
                         Vx.log('Widget tapped!');
                       },

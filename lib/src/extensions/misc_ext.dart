@@ -111,7 +111,7 @@ extension VxColorExtension on Color {
   MaterialColor materialColor() => Vx.getMaterialColor(this);
 
   /// whether the color is transparent or not
-  bool get isTransparent => alpha == 0;
+  bool get isTransparent => a == 0;
 
   /// Get the swatch of the color
   MaterialColor get swatch =>

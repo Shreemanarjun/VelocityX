@@ -75,7 +75,6 @@ extension VxListWidgetExtension on List<Widget> {
   ///
   Widget aStack(
           {Key? key,
-          Clip clipBehavior = Clip.none,
           OverflowBarAlignment overflowAlignment = OverflowBarAlignment.start,
           VerticalDirection overflowDirection = VerticalDirection.down,
           double overflowSpacing = 0.0,
@@ -83,7 +82,6 @@ extension VxListWidgetExtension on List<Widget> {
           TextDirection? textDirection}) =>
       AStack(
         key: key,
-        clipBehavior: clipBehavior,
         overflowAlignment: overflowAlignment,
         overflowDirection: overflowDirection,
         overflowSpacing: overflowSpacing,

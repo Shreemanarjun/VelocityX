@@ -1,8 +1,8 @@
 /*
-The VxUniversal widget is a versatile widget in Flutter that can be used for 
-various purposes. It allows you to combine multiple Flutter widgets and 
-apply different properties and behaviors to them using a single widget. 
-The VxUniversal widget supports a wide range of properties and options, 
+The VxUniversal widget is a versatile widget in Flutter that can be used for
+various purposes. It allows you to combine multiple Flutter widgets and
+apply different properties and behaviors to them using a single widget.
+The VxUniversal widget supports a wide range of properties and options,
 making it highly customizable.
 
 Here is a breakdown of the properties and their functionalities:
@@ -802,7 +802,7 @@ class VxUniversal extends StatelessWidget {
 
   Widget cardWidget(Widget current, BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    final CardTheme cardTheme = CardTheme.of(context);
+    final CardThemeData cardTheme = CardTheme.of(context);
     return material(current,
         mType: MaterialType.card,
         mShadowColor: shadowColor ?? cardTheme.shadowColor ?? theme.shadowColor,
