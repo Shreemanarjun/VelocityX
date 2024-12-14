@@ -1,3 +1,8 @@
+## [4.1.3] - Nov 23, 2023
+
+- Flutter 3.27 migration fixes
+
+
 ## [4.1.2] - Nov 23, 2023
 
 - Bug Fixes

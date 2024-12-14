@@ -184,9 +184,7 @@ class VxOrderedList extends StatelessWidget {
         return '${_toRomanNumeral(index)}.';
       case VxListType.lowerRoman:
         return '${_toRomanNumeral(index).toLowerCase()}.';
-      default:
-        return '$index.';
-    }
+      }
   }
 
   String _toRomanNumeral(int number) {

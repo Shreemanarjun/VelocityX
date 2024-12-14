@@ -459,15 +459,16 @@ class VxRichText extends VxWidgetBuilder<Widget>
       height: _lineHeight,
       textBaseline: _textBaseline ?? TextBaseline.alphabetic,
       wordSpacing: _wordSpacing,
+    ); // Create the TextSpan with the recognizer
+    final textSpan = TextSpan(
+      text: _text,
+      children: _textSpanChildren,
+      recognizer: _gestureRecognizer, // Ensure recognizer is set here
+      style: _themedStyle?.merge(ts) ?? _textStyle?.merge(ts) ?? ts,
     );
     return _isIntrinsic
         ? Text.rich(
-            TextSpan(
-              text: _text,
-              children: _textSpanChildren,
-              recognizer: _gestureRecognizer,
-              style: _themedStyle?.merge(ts) ?? _textStyle?.merge(ts) ?? ts,
-            ),
+            textSpan,
             key: key,
             textAlign: _textAlign,
             maxLines: _maxLines,
@@ -478,12 +479,7 @@ class VxRichText extends VxWidgetBuilder<Widget>
             strutStyle: _strutStyle,
           )
         : AutoSizeText.rich(
-            TextSpan(
-              text: _text,
-              children: _textSpanChildren,
-              recognizer: _gestureRecognizer,
-              style: _themedStyle?.merge(ts) ?? _textStyle?.merge(ts) ?? ts,
-            ),
+            textSpan,
             key: key,
             textAlign: _textAlign,
             maxLines: _maxLines,

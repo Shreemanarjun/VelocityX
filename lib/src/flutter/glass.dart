@@ -84,7 +84,7 @@ class VxGlassmorphic extends StatelessWidget {
           borderRadius: borderRadius ?? BorderRadius.circular(circularRadius!),
           border: border ??
               Border.all(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withValues(alpha: 0.3),
                   width: 0.3,
                   style: BorderStyle.solid),
         ),
@@ -100,7 +100,7 @@ class VxGlassmorphic extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius:
                     borderRadius ?? BorderRadius.circular(circularRadius!),
-                color: Colors.grey[100]?.withOpacity(opacity!),
+                color: Colors.grey[100]?.withValues(alpha: opacity!),
               ),
               child: child,
             ),
@@ -129,7 +129,7 @@ class _PaintShadow extends CustomPainter {
       double? strokeWidth}) {
     return Paint()
       ..style = PaintingStyle.stroke
-      ..color = color!.withOpacity(0.24)
+      ..color = color!.withValues(alpha: 0.24)
       ..strokeWidth = strokeWidth!
       ..maskFilter = MaskFilter.blur(
         BlurStyle.normal,

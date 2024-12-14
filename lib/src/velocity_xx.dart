@@ -759,21 +759,71 @@ mixin Vx {
   }
 
   static MaterialColor getMaterialColor(Color color) {
-    final int red = color.red;
-    final int green = color.green;
-    final int blue = color.blue;
+    final double red = color.r;
+    final double green = color.g;
+    final double blue = color.b;
 
     final Map<int, Color> shades = {
-      50: Color.fromRGBO(red, green, blue, .1),
-      100: Color.fromRGBO(red, green, blue, .2),
-      200: Color.fromRGBO(red, green, blue, .3),
-      300: Color.fromRGBO(red, green, blue, .4),
-      400: Color.fromRGBO(red, green, blue, .5),
-      500: Color.fromRGBO(red, green, blue, .6),
-      600: Color.fromRGBO(red, green, blue, .7),
-      700: Color.fromRGBO(red, green, blue, .8),
-      800: Color.fromRGBO(red, green, blue, .9),
-      900: Color.fromRGBO(red, green, blue, 1),
+      50: Color.from(
+        alpha: .1,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      100: Color.from(
+        alpha: .2,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      200: Color.from(
+        alpha: .3,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      300: Color.from(
+        alpha: .4,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      400: Color.from(
+        alpha: .5,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      500: Color.from(
+        alpha: .6,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      600: Color.from(
+        alpha: .7,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      700: Color.from(
+        alpha: .8,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      800: Color.from(
+        alpha: .9,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
+      900: Color.from(
+        alpha: 1,
+        red: red,
+        green: green,
+        blue: blue,
+      ),
     };
 
     return MaterialColor(color.value, shades);
