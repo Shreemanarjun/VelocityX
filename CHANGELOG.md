@@ -1,3 +1,7 @@
+## [4.3.1] -
+
+- Upgrade Intl changes
+
 ## [4.3.0] -
 
 - Breaking changes for intl and Flutter 3.27 migration fixes
