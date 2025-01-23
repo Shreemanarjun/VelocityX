@@ -4,5 +4,7 @@
         "dartpad",
         "Kumar",
         "Pawan"
-    ]
+    ],
+    "dart.flutterSdkPath": "/Users/pawankumar/.puro/envs/stable/flutter",
+    "dart.sdkPath": "/Users/pawankumar/.puro/envs/stable/flutter/bin/cache/dart-sdk"
 }
