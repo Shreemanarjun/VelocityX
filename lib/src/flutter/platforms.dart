@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 /// Sample
 ///
+// ignore: unintended_html_in_doc_comment
 /// class PlatformAppBar extends VxPlatform<AppBar, CupertinoNavigationBar, AppBar, AppBar> {
 ///   final Widget title;
 ///   final Widget leading;
