@@ -1,3 +1,8 @@
+## [4.3.0] - Jan 23, 2025
+
+- Flutter 3.27 compatibility added
+- Bug fixes and improvements
+
 ## [4.2.1] - May 27, 2024
 
 - WidgetState reverted back to MaterialState for compatibility with Flutter <3.22
