@@ -1,6 +1,7 @@
 ## [4.3.1] -
 
 - Upgrade Intl changes
+- Fix for InkWell.enableFeedback
 
 ## [4.3.0] -
 
