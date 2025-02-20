@@ -1,3 +1,6 @@
+## [4.3.1] -
+- Fix enableFeedback default value in VxUniversal in Flutter 3.29
+
 ## [4.3.0] - Jan 23, 2025
 
 - Flutter 3.27 compatibility added
