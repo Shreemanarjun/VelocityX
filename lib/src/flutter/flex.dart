@@ -93,6 +93,7 @@ class VxInlineBlock extends Flex {
 ///
 /// {@tool snippet}
 ///
+/// {@end-tool}
 /// This example uses a [VStack] to arrange three widgets vertically, the last
 /// being made to fill all the remaining space.
 ///
@@ -429,7 +430,7 @@ class ZStack extends StatelessWidget {
 }
 
 class AStack extends StatelessWidget {
-
+  final Clip clipBehavior;
   final OverflowBarAlignment overflowAlignment;
   final VerticalDirection overflowDirection;
   final double overflowSpacing;
@@ -440,7 +441,7 @@ class AStack extends StatelessWidget {
   const AStack(
       {super.key,
       required this.children,
-
+      this.clipBehavior = Clip.none,
       this.overflowAlignment = OverflowBarAlignment.start,
       this.overflowDirection = VerticalDirection.down,
       this.overflowSpacing = 0.0,
@@ -451,7 +452,6 @@ class AStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return OverflowBar(
       key: key,
-
       overflowAlignment: overflowAlignment,
       overflowDirection: overflowDirection,
       overflowSpacing: overflowSpacing,

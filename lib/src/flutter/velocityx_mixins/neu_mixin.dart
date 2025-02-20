@@ -105,10 +105,10 @@ mixin VxNeuMixin {
       );
 
   Color _getNeuColor(Color baseColor, double amount) {
-    Map<String, double> colors = {
-      'r': baseColor.r,
-      'g': baseColor.g,
-      'b': baseColor.b
+    Map<String, int> colors = {
+      'r': baseColor.r.toInt(),
+      'g': baseColor.g.toInt(),
+      'b': baseColor.b.toInt()
     };
 
     colors = colors.map((key, value) {
@@ -118,9 +118,8 @@ mixin VxNeuMixin {
       if (value + amount > 255) {
         return MapEntry(key, 255);
       }
-      return MapEntry(key, (value + amount).floor().toDouble());
+      return MapEntry(key, (value + amount).floor());
     });
-    return Color.fromRGBO(
-        colors['r']!.toInt(), colors['g']!.toInt(), colors['b']!.toInt(), 1);
+    return Color.fromRGBO(colors['r']!, colors['g']!, colors['b']!, 1);
   }
 }

@@ -32,7 +32,7 @@ class VxDiagonalClipper extends CustomClipper<Path> {
         return _getBottomLeftPath(size);
       case VxDiagonalPosition.bottomRight:
         return _getBottomRightPath(size);
-      }
+    }
   }
 
   Path _getTopLeftPath(Size size) {
